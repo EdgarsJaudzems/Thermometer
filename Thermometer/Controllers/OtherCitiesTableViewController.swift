@@ -8,40 +8,72 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import CoreLocation
 
-class OtherCitiesTableViewController: UITableViewController {
+class OtherCitiesTableViewController: UITableViewController, CLLocationManagerDelegate {
 
     let weatherDataModel = WeatherDataModel()
-    let cityURL = "https://api.openweathermap.org/data/2.5/find?lat=37.7&lon=-122.4&cnt=40&units=metric&appid=a068820374d42ea9e308a8c8de8546a8"
+    let locationManager = CLLocationManager()
+
     var cityName = [String]()
-    var temp = [String]()
-    var icon = [Int]()
-  
+    var temp = [Int]()
+    var icon = [String]()
+    
+    let nearestCityamount = "10"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getWeatherData(url: cityURL)
+    
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+        
     }
     
-    func getWeatherData(url: String) {
-        AF.request(url, method: .get).responseJSON { (response) in
+    // CLLocation Manager
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[locations.count - 1]
+        var latitude = ""
+        var longitude = ""
+        
+        if location.horizontalAccuracy > 0 {
+            locationManager.startUpdatingLocation()
+            print("long: \(location.coordinate.longitude), lat: \(location.coordinate.latitude)")
+            
+            latitude = String(location.coordinate.latitude)
+            longitude = String(location.coordinate.longitude)
+            let params: [String: String] = ["lat": latitude, "lon": longitude, "cnt" : nearestCityamount ,"appid": weatherDataModel.apiId]
+            
+ 
+            getWeatherData(url: weatherDataModel.apiUrlOther, params: params)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("error: ", error)
+    }
+    
+    func getWeatherData(url: String, params: [String: String]) {
+        AF.request(url, method: .get, parameters: params).responseJSON { (response) in
             if response.value != nil {
                 let weatherJSON: JSON = JSON(response.value!)
                 print("weatherJSON: ", weatherJSON)
                 
                 let results = weatherJSON["list"].arrayValue
-                
+
                 for result in results {
                     let cityName = result["name"].stringValue
-                    let temp = result["main"]["temp"].stringValue
-                    let icon = result["cod"].intValue
-
+                    let temp = result["main"]["temp"].intValue - 273
+                    let iconTemp = result["cod"].intValue
+                    let icon = self.weatherDataModel.updateWeatherIcon(condition: iconTemp)
+      
                     self.cityName.append(cityName)
                     self.temp.append(temp)
                     self.icon.append(icon)
                 }
-                
-              
+
+
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -66,10 +98,7 @@ class OtherCitiesTableViewController: UITableViewController {
 
         cell.cityNameLabel.text = "\(cityName[indexPath.row])"
         cell.tempLabel.text = "\(temp[indexPath.row]) °C"
-
-      //  cell.iconLabel.image = weatherDataModel.updateWeatherIcon(condition: weatherDataModel.condition)
-
-        cell.iconLabel.image = UIImage(systemName: "sun.max")
+        cell.iconLabel.image = UIImage(systemName: icon[indexPath.row])
         
         return cell
     }

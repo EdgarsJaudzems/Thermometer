@@ -12,8 +12,8 @@ class WeatherDataModel{
     let apiUrl = "https://api.openweathermap.org/data/2.5/weather"
     let apiId = "a068820374d42ea9e308a8c8de8546a8"
     
-    let apiUrlOther = "https://api.openweathermap.org/data/2.5/box/city?bbox=12,32,15,37,10&appid=a068820374d42ea9e308a8c8de8546a8"
-    
+    let apiUrlOther = "https://api.openweathermap.org/data/2.5/find?"
+
     var temp: Int = 0
     var condition: Int = 0
     var city: String = ""

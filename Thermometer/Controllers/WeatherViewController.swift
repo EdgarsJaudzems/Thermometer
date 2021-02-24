@@ -22,7 +22,6 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var latitudeLabel: UILabel!
     @IBOutlet weak var searchTextField: UITextField!
     
-    
     let userDefaults = UserDefaults.standard
     let weatherDataModel = WeatherDataModel()
     let locationManager = CLLocationManager()

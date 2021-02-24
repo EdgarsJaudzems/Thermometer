@@ -6,12 +6,17 @@
 //
 
 import UIKit
+import CoreData
 
 class NewsDetailViewController: UIViewController {
 
     @IBOutlet weak var newsTitleLabel: UILabel!
     @IBOutlet weak var newsDescriptionLabel: UILabel!
     @IBOutlet weak var newsImage: UIImageView!
+    
+    //Core data
+    var savedItems = [Items]()
+    var context: NSManagedObjectContext?
     
     var webURLString = String()
     var titleString = String()
@@ -25,7 +30,33 @@ class NewsDetailViewController: UIViewController {
         newsDescriptionLabel.text = contentString
         newsImage.loadImage(urlString: self.newsImages)
 
-
+        //Core data
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        context = appDelegate.persistentContainer.viewContext
+    }
+    
+    @IBAction func savedBUttonTapped(_ sender: Any) {
+        // Saving to core data
+        let newItem = Items(context: self.context!)
+        newItem.newsTitle = titleString
+        newItem.newsContent = contentString
+        newItem.url = webURLString
+        newItem.image = newsImages
+        
+     
+        // Appending core data and save items
+        self.savedItems.append(newItem)
+        saveData()
+    }
+    
+    // saving core data
+    func saveData() {
+        do {
+            try context?.save()
+        } catch {
+            // alert
+            print(error.localizedDescription)
+        }
     }
     
     // MARK: - Navigation

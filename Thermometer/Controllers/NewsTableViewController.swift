@@ -18,7 +18,8 @@ class NewsTableViewController: UITableViewController {
     let newsURL = "http://newsapi.org/v2/everything?q=weather&sortBy=publishedAt&apiKey=23d84b84b6ec4512949301869ddfebef"
     var headlines = [String]()
     var images = [String]()
-    var urls = [URL]()
+    var content = [String]()
+    var urls = [String]()
     //var webView = WKWebView
     
     override func viewDidLoad() {
@@ -26,11 +27,6 @@ class NewsTableViewController: UITableViewController {
        // webView = WKWebView()
         
         getNewsData(url: newsURL)
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     func getNewsData(url: String) {
@@ -44,14 +40,15 @@ class NewsTableViewController: UITableViewController {
                 for article in articles {
                     let headlines = article["title"].stringValue
                     let images = article["urlToImage"].stringValue
-                    let urls = article["url"].url
+                    let content = article["description"].stringValue
+                    let urls = article["url"].stringValue
 
                     self.headlines.append(headlines)
                     self.images.append(images)
-                    self.urls.append(urls!)
+                    self.content.append(content)
+                    self.urls.append(urls)
                 }
-                
-              
+
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -79,10 +76,26 @@ class NewsTableViewController: UITableViewController {
         cell.newsLabelCell.text = self.headlines[indexPath.row]
         cell.newsImageCell.load(urlString: self.images[indexPath.row])
        
-        
         return cell
     }
-}
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        guard let vc = storyboard.instantiateViewController(identifier: "NewsDetailViewController") as? NewsDetailViewController else {
+            return
+        }
+       
+        vc.titleString = headlines[indexPath.row]
+        vc.contentString = content[indexPath.row]
+        vc.webURLString = urls[indexPath.row]
+        vc.newsImages = images[indexPath.row]
+        
+            
+        navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+
 
 extension UIImageView {
     func load(urlString : String) {

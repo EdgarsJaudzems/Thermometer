@@ -563,6 +563,146 @@
             </objects>
             <point key="canvasLocation" x="4920.8000000000002" y="1374.9625187406298"/>
         </scene>
+        <!--News Detail View Controller-->
+        <scene sceneID="HSt-hU-wwk">
+            <objects>
+                <viewController storyboardIdentifier="NewsDetailViewController" id="fdy-4C-feK" customClass="NewsDetailViewController" customModule="Thermometer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EmI-Yq-fm6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bfS-9q-7AK">
+                                <rect key="frame" x="67.5" y="51" width="240" height="472"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qyU-Le-r4h">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="368"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JxZ-e4-wIL">
+                                                <rect key="frame" x="99.5" y="0.0" width="41.5" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="270" id="16C-2r-iRA"/>
+                                                    <constraint firstAttribute="height" constant="80" id="jK8-OF-4Jn"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m5r-c5-JHh">
+                                                <rect key="frame" x="0.0" y="88" width="240" height="128"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" id="3Yw-Y2-KSB"/>
+                                                    <constraint firstAttribute="width" constant="240" id="ocp-cG-wSS"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGd-cp-MW0">
+                                                <rect key="frame" x="99.5" y="224" width="41.5" height="144"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="144" id="0yc-sy-zUf"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="IPh-KJ-a3S">
+                                        <rect key="frame" x="0.0" y="376" width="240" height="96"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSP-NS-wlF" customClass="DesignButton" customModule="Thermometer" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="7kr-OZ-vjH"/>
+                                                    <constraint firstAttribute="width" constant="240" id="YDy-Ea-QVg"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="28"/>
+                                                <state key="normal" title="Read Full Article">
+                                                    <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="11"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="i2u-76-PBw" kind="show" id="EC6-KQ-b24"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Kw-bn-Kko" customClass="DesignButton" customModule="Thermometer" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="62" width="240" height="34"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="PWT-5l-Fn8"/>
+                                                    <constraint firstAttribute="width" constant="240" id="ifW-DC-yYx"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="28"/>
+                                                <state key="normal" title="Save For Later">
+                                                    <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="11"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kmB-mR-9JA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bfS-9q-7AK" firstAttribute="top" secondItem="kmB-mR-9JA" secondAttribute="top" constant="51" id="N6e-LA-e3c"/>
+                            <constraint firstItem="bfS-9q-7AK" firstAttribute="centerX" secondItem="EmI-Yq-fm6" secondAttribute="centerX" id="ifD-Eb-EXP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="newsDescriptionLabel" destination="gGd-cp-MW0" id="iBO-yD-LbV"/>
+                        <outlet property="newsImage" destination="m5r-c5-JHh" id="ADH-uE-hJX"/>
+                        <outlet property="newsTitleLabel" destination="JxZ-e4-wIL" id="gLS-JY-T3v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kDD-mB-M6j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5656.8000000000002" y="1374.9625187406298"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="9Nz-1T-TMy">
+            <objects>
+                <viewController id="i2u-76-PBw" customClass="WebViewController" customModule="Thermometer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zUl-Uv-DxP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fJt-bZ-L4x">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QIZ-Sa-ENk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LdA-Uw-NgS"/>
+                    <connections>
+                        <outlet property="webView" destination="fJt-bZ-L4x" id="g5Y-fL-3Ee"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yuP-jJ-DBY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6410.3999999999996" y="1374.9625187406298"/>
+        </scene>
         <!--News-->
         <scene sceneID="LBi-Ir-jzf">
             <objects>
@@ -584,6 +724,9 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="1Kw-bn-Kko">
+            <size key="intrinsicContentSize" width="146" height="38"/>
+        </designable>
         <designable name="2fS-da-2lo">
             <size key="intrinsicContentSize" width="163" height="34"/>
         </designable>
@@ -595,6 +738,9 @@
         </designable>
         <designable name="QJD-jS-2lV">
             <size key="intrinsicContentSize" width="186.5" height="34"/>
+        </designable>
+        <designable name="TSP-NS-wlF">
+            <size key="intrinsicContentSize" width="160" height="38"/>
         </designable>
         <designable name="x8M-SO-NZu">
             <size key="intrinsicContentSize" width="61" height="41"/>

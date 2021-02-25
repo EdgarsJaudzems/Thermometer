@@ -9,7 +9,7 @@ import UIKit
 import CoreData
 
 class NewsDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var newsTitleLabel: UILabel!
     @IBOutlet weak var newsDescriptionLabel: UILabel!
     @IBOutlet weak var newsImage: UIImageView!
@@ -29,7 +29,7 @@ class NewsDetailViewController: UIViewController {
         newsTitleLabel.text = titleString
         newsDescriptionLabel.text = contentString
         newsImage.loadImage(urlString: self.newsImages)
-
+        
         //Core data
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         context = appDelegate.persistentContainer.viewContext
@@ -43,7 +43,6 @@ class NewsDetailViewController: UIViewController {
         newItem.url = webURLString
         newItem.image = newsImages
         
-     
         // Appending core data and save items
         self.savedItems.append(newItem)
         saveData()
@@ -60,15 +59,12 @@ class NewsDetailViewController: UIViewController {
     }
     
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         let destination: WebViewController = segue.destination as! WebViewController
         // Pass the selected object to the new view controller.
         destination.urlString = webURLString
     }
-
 }
 
 extension UIImageView {

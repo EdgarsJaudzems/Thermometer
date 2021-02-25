@@ -14,12 +14,11 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setLabelText()
-        // Do any additional setup after loading the view.
     }
     
     
     @IBAction func darkModeSwitch(_ sender: Any) {
-       openSettings()
+        openSettings()
     }
     
     func openSettings() {

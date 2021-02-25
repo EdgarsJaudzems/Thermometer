@@ -10,7 +10,7 @@ import Alamofire
 import SwiftyJSON
 
 class NewsTableViewController: UITableViewController {
-
+    
     let newsDataModel = NewsDataModel()
     var item: [NewsDataModel] = []
     
@@ -24,12 +24,11 @@ class NewsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         getNewsData(url: newsURL)
-
+        
     }
     @IBAction func infoButtonTapped(_ sender: Any) {
         warningPopUP(withTitle: "Weather News", withMessage: "Find out latest weather news in your feed")
     }
-    
     
     func getNewsData(url: String) {
         AF.request(url, method: .get).responseJSON { (response) in
@@ -44,40 +43,35 @@ class NewsTableViewController: UITableViewController {
                     let images = article["urlToImage"].stringValue
                     let content = article["description"].stringValue
                     let urls = article["url"].stringValue
-
+                    
                     self.headlines.append(headlines)
                     self.images.append(images)
                     self.content.append(content)
                     self.urls.append(urls)
                 }
-
+                
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
             }
         }
     }
- 
     
-   
-
     // MARK: - Table view data source
-    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return headlines.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! NewsTableViewCell
-
+        
         cell.newsLabelCell.text = self.headlines[indexPath.row]
         cell.newsImageCell.load(urlString: self.images[indexPath.row])
-       
+        
         return cell
     }
     
@@ -87,16 +81,16 @@ class NewsTableViewController: UITableViewController {
         guard let vc = storyboard.instantiateViewController(identifier: "NewsDetailViewController") as? NewsDetailViewController else {
             return
         }
-       
+        
         vc.titleString = headlines[indexPath.row]
         vc.contentString = content[indexPath.row]
         vc.webURLString = urls[indexPath.row]
         vc.newsImages = images[indexPath.row]
         
-            
+        
         navigationController?.pushViewController(vc, animated: true)
-        }
     }
+}
 
 
 extension UIImageView {

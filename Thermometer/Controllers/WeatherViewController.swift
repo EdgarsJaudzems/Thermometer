@@ -11,7 +11,7 @@ import SwiftyJSON
 import CoreLocation
 
 class WeatherViewController: UIViewController, CLLocationManagerDelegate {
-   
+    
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var weatherIcon: UIImageView!
@@ -29,7 +29,6 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // removeTabBarBorder()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestAlwaysAuthorization()
@@ -51,7 +50,6 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         warningPopUP(withTitle: "Thermometer", withMessage: "Use your location coordinates to see weather conditions")
     }
     
-    
     func removeTabBarBorder() {
         self.tabBarController!.tabBar.layer.borderWidth = 0.50
         self.tabBarController!.tabBar.layer.borderColor = UIColor.clear.cgColor
@@ -61,19 +59,19 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     @objc func keyboardWillShow(notification: Notification) {
         if self.view.frame.origin.y == 0 {
             self.view.frame.origin.y -= 150
-
+            
             let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-//            let titleImageView = weatherIcon
-//            titleImageView?.frame = CGRect(x: 0, y: 0, width: titleView.frame.width, height: titleView.frame.height)
-//            titleView.addSubview(titleImageView!)
+            //            let titleImageView = weatherIcon
+            //            titleImageView?.frame = CGRect(x: 0, y: 0, width: titleView.frame.width, height: titleView.frame.height)
+            //            titleView.addSubview(titleImageView!)
             navigationItem.titleView = titleView
         }
     }
-
+    
     @objc func keyboardWillHide(notification: Notification) {
         if self.view.frame.origin.y != 0  {
             self.view.frame.origin.y += 150
-
+            
             navigationItem.titleView?.isHidden = true
         }
     }
@@ -126,7 +124,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
             self.cityLabel.text = "Weather unavailable"
         }
     }
-
+    
     // UpdateUI
     func updateUI() {
         cityLabel.text = weatherDataModel.city
@@ -137,13 +135,13 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         windLabel.text = "Wind: \(weatherDataModel.wind) km/h"
         longitudeLabel.text = "Longitude: \(weatherDataModel.longitude)"
         latitudeLabel.text = "Latitude: \(weatherDataModel.latitude)"
-
+        
     }
     
     func userEnterCityName(city: String) {
         print(city)
         let params: [String:String] = ["q": city , "appid": weatherDataModel.apiId]
-                
+        
         getWeatherData(url: weatherDataModel.apiUrl, params: params)
     }
     

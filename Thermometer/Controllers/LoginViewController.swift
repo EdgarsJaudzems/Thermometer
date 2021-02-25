@@ -18,7 +18,6 @@ class LoginViewController: UIViewController {
     
     let notificationCenter = NotificationCenter.default
     let userDefaults = UserDefaults.standard
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,15 +39,15 @@ class LoginViewController: UIViewController {
             
             let titleImageView = UIImageView(image: UIImage(systemName: "thermometer"))
             titleImageView.frame = CGRect(x: 0, y: 0, width: titleView.frame.width, height: titleView.frame.height)
-
+            
             navigationItem.titleView = titleView
         }
     }
-
+    
     @objc func keyboardWillHide(notification: Notification) {
         if self.view.frame.origin.y != 0  {
             self.view.frame.origin.y += 150
-
+            
             navigationItem.titleView?.isHidden = true
         }
     }
@@ -64,7 +63,7 @@ class LoginViewController: UIViewController {
         usernameTextField.text = ""
         passwordTextField.text = ""
     }
-
+    
     @IBAction func loginButtonTapped(_ sender: Any) {
         handleLogin()
     }

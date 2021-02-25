@@ -465,7 +465,7 @@
             </objects>
             <point key="canvasLocation" x="3342" y="681"/>
         </scene>
-        <!--Closest places-->
+        <!--Forecast near my location-->
         <scene sceneID="ctx-lm-Ibl">
             <objects>
                 <tableViewController id="Qnr-no-K9E" customClass="OtherCitiesTableViewController" customModule="Thermometer" customModuleProvider="target" sceneMemberID="viewController">
@@ -536,7 +536,7 @@
                             <outlet property="delegate" destination="Qnr-no-K9E" id="OmN-JJ-C07"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Closest places" id="gft-AD-daY">
+                    <navigationItem key="navigationItem" title="Forecast near my location" id="gft-AD-daY">
                         <barButtonItem key="leftBarButtonItem" image="checkmark.seal" catalog="system" id="fIa-p2-6rQ">
                             <color key="tintColor" systemColor="systemRedColor"/>
                             <connections>
@@ -555,11 +555,11 @@
             </objects>
             <point key="canvasLocation" x="4920.8000000000002" y="669.71514242878561"/>
         </scene>
-        <!--Closest places-->
+        <!--Near me-->
         <scene sceneID="s9a-th-4Ps">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="etz-0Y-WhF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Closest places" image="paperplane.circle.fill" catalog="system" id="xYL-zW-VXo"/>
+                    <tabBarItem key="tabBarItem" title="Near me" image="location.circle" catalog="system" id="xYL-zW-VXo"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ms6-4S-hMc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -796,7 +796,7 @@
         <scene sceneID="LBi-Ir-jzf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DqI-PL-Kun" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="News" image="list.number.rtl" catalog="system" id="zuv-UH-hUU"/>
+                    <tabBarItem key="tabBarItem" title="News" image="text.justify" catalog="system" id="zuv-UH-hUU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="M65-jb-qfI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -870,6 +870,9 @@
                     <navigationItem key="navigationItem" id="gOw-fk-V0n">
                         <barButtonItem key="leftBarButtonItem" image="checkmark.seal" catalog="system" id="eb4-MQ-T8v">
                             <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <segue destination="clF-Qs-YhG" kind="show" id="e7f-OM-8N5"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" id="ZWU-0w-h5L">
                             <color key="tintColor" systemColor="systemRedColor"/>
@@ -928,17 +931,17 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="6Wb-DC-Lli"/>
+        <segue reference="dno-hb-zfV"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="checkmark.seal" catalog="system" width="128" height="128"/>
         <image name="folder" catalog="system" width="128" height="97"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
-        <image name="list.number.rtl" catalog="system" width="128" height="97"/>
-        <image name="paperplane.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="location.circle" catalog="system" width="128" height="121"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="sun.min" catalog="system" width="128" height="121"/>
+        <image name="text.justify" catalog="system" width="128" height="100"/>
         <image name="thermometer" catalog="system" width="93" height="128"/>
         <image name="wallet.pass" catalog="system" width="115" height="128"/>
         <systemColor name="labelColor">

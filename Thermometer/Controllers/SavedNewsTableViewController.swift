@@ -23,6 +23,9 @@ class SavedNewsTableViewController: UITableViewController {
         loadData()
     }
     
+    @IBAction func infoButtonTapped(_ sender: Any) {
+        warningPopUP(withTitle: "Saved for later", withMessage: "You can read saved for later articles")
+    }
     override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(true)
            loadData()

@@ -346,7 +346,20 @@
                             <constraint firstItem="zom-eO-V96" firstAttribute="centerY" secondItem="nAe-oA-pYN" secondAttribute="centerY" id="MvR-es-t2Z"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Thermometer" id="DKQ-5A-3gY"/>
+                    <navigationItem key="navigationItem" title="Thermometer" id="DKQ-5A-3gY">
+                        <barButtonItem key="leftBarButtonItem" image="checkmark.seal" catalog="system" id="U9J-BU-pcy">
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <segue destination="clF-Qs-YhG" kind="show" id="gx0-0X-pTG"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" id="ZO1-Yx-Ujp">
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <action selector="infoButtonTapped:" destination="ccf-Y4-i6u" id="NLh-3t-I7W"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cityLabel" destination="wi2-ZM-H5Q" id="cMc-oP-bdH"/>
                         <outlet property="humidityLabel" destination="72t-SO-pQQ" id="0n2-vH-Ff4"/>
@@ -363,6 +376,50 @@
             </objects>
             <point key="canvasLocation" x="4921" y="-22"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="kUT-FY-4cF">
+            <objects>
+                <viewController id="clF-Qs-YhG" customClass="SettingsViewController" customModule="Thermometer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s4q-An-G37">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Go to iPhone Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ilc-qc-d4z">
+                                <rect key="frame" x="60" y="201" width="166" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="S84-Cf-paR">
+                                <rect key="frame" x="265" y="201" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="onTintColor" systemColor="systemRedColor"/>
+                                <connections>
+                                    <action selector="darkModeSwitch:" destination="clF-Qs-YhG" eventType="valueChanged" id="IwO-Ap-Nrs"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dark mode is OFF" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GB6-I6-sfa">
+                                <rect key="frame" x="91" y="156" width="193" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bGu-SP-lTp"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="MMX-Aq-ueM"/>
+                    <connections>
+                        <outlet property="darkModeTextLabel" destination="GB6-I6-sfa" id="aK7-W9-ReF"/>
+                        <outlet property="goToSettingsLabel" destination="Ilc-qc-d4z" id="lKS-xL-vOW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ejA-le-a5n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5936.8000000000002" y="-22.03898050974513"/>
+        </scene>
         <!--Home-->
         <scene sceneID="DXl-ZV-SB7">
             <objects>
@@ -372,6 +429,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rry-Z7-VFj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="labelColor"/>
                         <color key="barTintColor" systemColor="systemGray6Color"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -407,7 +465,7 @@
             </objects>
             <point key="canvasLocation" x="3342" y="681"/>
         </scene>
-        <!--Places-->
+        <!--Closest places-->
         <scene sceneID="ctx-lm-Ibl">
             <objects>
                 <tableViewController id="Qnr-no-K9E" customClass="OtherCitiesTableViewController" customModule="Thermometer" customModuleProvider="target" sceneMemberID="viewController">
@@ -437,22 +495,22 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VmG-Za-jHI">
                                                     <rect key="frame" x="99" y="0.0" width="250" height="70"/>
                                                     <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jF-rt-GWG">
+                                                            <rect key="frame" x="0.0" y="0.0" width="250" height="32"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="dTy-VF-Eww"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZ1-84-sQu">
-                                                            <rect key="frame" x="0.0" y="0.0" width="70" height="30"/>
+                                                            <rect key="frame" x="0.0" y="40" width="70" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="FHH-pp-zns"/>
                                                                 <constraint firstAttribute="height" constant="30" id="Ilw-Hc-Rhp"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jF-rt-GWG">
-                                                            <rect key="frame" x="0.0" y="38" width="250" height="32"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="dTy-VF-Eww"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -478,21 +536,35 @@
                             <outlet property="delegate" destination="Qnr-no-K9E" id="OmN-JJ-C07"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Places" id="gft-AD-daY"/>
+                    <navigationItem key="navigationItem" title="Closest places" id="gft-AD-daY">
+                        <barButtonItem key="leftBarButtonItem" image="checkmark.seal" catalog="system" id="fIa-p2-6rQ">
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <segue destination="clF-Qs-YhG" kind="show" id="dno-hb-zfV"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" id="eB5-vL-2N1">
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <action selector="infoButtonTapped:" destination="Qnr-no-K9E" id="lHT-6D-HRR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xhu-PX-6Xv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4920.8000000000002" y="669.71514242878561"/>
         </scene>
-        <!--Places-->
+        <!--Closest places-->
         <scene sceneID="s9a-th-4Ps">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="etz-0Y-WhF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Places" image="paperplane.circle.fill" catalog="system" id="xYL-zW-VXo"/>
+                    <tabBarItem key="tabBarItem" title="Closest places" image="paperplane.circle.fill" catalog="system" id="xYL-zW-VXo"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ms6-4S-hMc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="labelColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -558,7 +630,20 @@
                             <outlet property="delegate" destination="OPr-3l-M5f" id="qdR-L1-ev7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Weather News" id="lHb-NV-7TN"/>
+                    <navigationItem key="navigationItem" title="Weather News" id="lHb-NV-7TN">
+                        <barButtonItem key="leftBarButtonItem" image="checkmark.seal" catalog="system" id="Y6L-53-C1K">
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <segue destination="clF-Qs-YhG" kind="show" id="6Wb-DC-Lli"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" id="icc-7f-cXU">
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <action selector="infoButtonTapped:" destination="OPr-3l-M5f" id="6Kw-tc-CeE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P9d-27-T5a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -579,12 +664,12 @@
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="368"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JxZ-e4-wIL">
-                                                <rect key="frame" x="99.5" y="0.0" width="41.5" height="80"/>
+                                                <rect key="frame" x="95.5" y="0.0" width="49" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="270" id="16C-2r-iRA"/>
                                                     <constraint firstAttribute="height" constant="80" id="jK8-OF-4Jn"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -716,6 +801,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="M65-jb-qfI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="labelColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -777,7 +863,17 @@
                             <outlet property="delegate" destination="pCG-JG-mtZ" id="D9V-Hy-ZPL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="gOw-fk-V0n"/>
+                    <navigationItem key="navigationItem" id="gOw-fk-V0n">
+                        <barButtonItem key="leftBarButtonItem" image="checkmark.seal" catalog="system" id="eb4-MQ-T8v">
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" id="ZWU-0w-h5L">
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <action selector="infoButtonTapped:" destination="pCG-JG-mtZ" id="1MV-yY-jkl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eXN-ma-NL4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -792,6 +888,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iJn-2a-NJf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="labelColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -826,9 +923,14 @@
             <size key="intrinsicContentSize" width="61" height="41"/>
         </designable>
     </designables>
+    <inferredMetricsTieBreakers>
+        <segue reference="gx0-0X-pTG"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="checkmark.seal" catalog="system" width="128" height="128"/>
         <image name="folder" catalog="system" width="128" height="97"/>
         <image name="house" catalog="system" width="128" height="106"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="list.number.rtl" catalog="system" width="128" height="97"/>
         <image name="paperplane.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person" catalog="system" width="128" height="117"/>

@@ -20,7 +20,7 @@
 		18652E5F25E3E53A00742421 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 18652E5E25E3E53A00742421 /* SwiftyJSON */; };
 		18652E6325E3E55700742421 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 18652E6225E3E55700742421 /* Alamofire */; };
 		18652E6825E3E6CD00742421 /* WeatherDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18652E6725E3E6CD00742421 /* WeatherDataModel.swift */; };
-		188ED84525E19A7F0037ABA0 /* ErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188ED84425E19A7F0037ABA0 /* ErrorExtension.swift */; };
+		188ED84525E19A7F0037ABA0 /* AlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188ED84425E19A7F0037ABA0 /* AlertExtension.swift */; };
 		188ED84B25E23CEF0037ABA0 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188ED84A25E23CEF0037ABA0 /* WeatherViewController.swift */; };
 		18BEDB8525E57808005A7272 /* OtherCitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEDB8425E57808005A7272 /* OtherCitiesTableViewController.swift */; };
 		18BEDB8825E57852005A7272 /* OtherCitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEDB8725E57851005A7272 /* OtherCitiesTableViewCell.swift */; };
@@ -30,6 +30,7 @@
 		18BEDB9D25E6598A005A7272 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEDB9C25E6598A005A7272 /* NewsDetailViewController.swift */; };
 		18BEDBA125E667EE005A7272 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEDBA025E667EE005A7272 /* WebViewController.swift */; };
 		18BEDBA525E66B9C005A7272 /* SavedNewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BEDBA425E66B9C005A7272 /* SavedNewsTableViewController.swift */; };
+		18E8189D25E76D6900B57EF8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E8189C25E76D6900B57EF8 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +47,7 @@
 		181FA33F25E170CE006AB9F0 /* DesignButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignButton.swift; sourceTree = "<group>"; };
 		181FA34025E170CF006AB9F0 /* BounceButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceButton.swift; sourceTree = "<group>"; };
 		18652E6725E3E6CD00742421 /* WeatherDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataModel.swift; sourceTree = "<group>"; };
-		188ED84425E19A7F0037ABA0 /* ErrorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorExtension.swift; sourceTree = "<group>"; };
+		188ED84425E19A7F0037ABA0 /* AlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertExtension.swift; sourceTree = "<group>"; };
 		188ED84A25E23CEF0037ABA0 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		18BEDB8425E57808005A7272 /* OtherCitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherCitiesTableViewController.swift; sourceTree = "<group>"; };
 		18BEDB8725E57851005A7272 /* OtherCitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherCitiesTableViewCell.swift; sourceTree = "<group>"; };
@@ -56,6 +57,7 @@
 		18BEDB9C25E6598A005A7272 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		18BEDBA025E667EE005A7272 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		18BEDBA425E66B9C005A7272 /* SavedNewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedNewsTableViewController.swift; sourceTree = "<group>"; };
+		18E8189C25E76D6900B57EF8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				18BEDB9C25E6598A005A7272 /* NewsDetailViewController.swift */,
 				18BEDBA025E667EE005A7272 /* WebViewController.swift */,
 				18BEDBA425E66B9C005A7272 /* SavedNewsTableViewController.swift */,
+				18E8189C25E76D6900B57EF8 /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -150,7 +153,7 @@
 		188ED84325E19A150037ABA0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				188ED84425E19A7F0037ABA0 /* ErrorExtension.swift */,
+				188ED84425E19A7F0037ABA0 /* AlertExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -247,8 +250,9 @@
 				181FA34125E170CF006AB9F0 /* DesignableTextField.swift in Sources */,
 				181FA34225E170CF006AB9F0 /* DesignButton.swift in Sources */,
 				181FA31F25E16720006AB9F0 /* AppDelegate.swift in Sources */,
+				18E8189D25E76D6900B57EF8 /* SettingsViewController.swift in Sources */,
 				18BEDB9225E5AFCC005A7272 /* NewsDataModel.swift in Sources */,
-				188ED84525E19A7F0037ABA0 /* ErrorExtension.swift in Sources */,
+				188ED84525E19A7F0037ABA0 /* AlertExtension.swift in Sources */,
 				18BEDB8C25E5AF90005A7272 /* NewsTableViewController.swift in Sources */,
 				18BEDBA525E66B9C005A7272 /* SavedNewsTableViewController.swift in Sources */,
 				18BEDB9D25E6598A005A7272 /* NewsDetailViewController.swift in Sources */,

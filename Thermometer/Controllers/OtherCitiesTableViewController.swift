@@ -31,6 +31,9 @@ class OtherCitiesTableViewController: UITableViewController, CLLocationManagerDe
         
     }
     
+    @IBAction func infoButtonTapped(_ sender: Any) {
+        warningPopUP(withTitle: "Weather conditions near you", withMessage: "Thermometer shows weather conditions of closest places based on your location")
+    }
     // CLLocation Manager
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[locations.count - 1]
@@ -85,7 +88,7 @@ class OtherCitiesTableViewController: UITableViewController, CLLocationManagerDe
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 80
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

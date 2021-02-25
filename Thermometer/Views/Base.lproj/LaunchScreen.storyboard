@@ -51,7 +51,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="Icg-av-4JF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="180" id="b2M-zl-JrM"/>
                             <constraint firstItem="Icg-av-4JF" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="lbd-BK-7kK"/>
@@ -65,8 +65,8 @@
     </scenes>
     <resources>
         <image name="poweroff" catalog="system" width="128" height="121"/>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

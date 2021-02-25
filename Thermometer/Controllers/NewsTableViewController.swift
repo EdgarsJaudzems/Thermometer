@@ -8,7 +8,6 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-import WebKit
 
 class NewsTableViewController: UITableViewController {
 
@@ -20,14 +19,17 @@ class NewsTableViewController: UITableViewController {
     var images = [String]()
     var content = [String]()
     var urls = [String]()
-    //var webView = WKWebView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // webView = WKWebView()
         
         getNewsData(url: newsURL)
+
     }
+    @IBAction func infoButtonTapped(_ sender: Any) {
+        warningPopUP(withTitle: "Weather News", withMessage: "Find out latest weather news in your feed")
+    }
+    
     
     func getNewsData(url: String) {
         AF.request(url, method: .get).responseJSON { (response) in

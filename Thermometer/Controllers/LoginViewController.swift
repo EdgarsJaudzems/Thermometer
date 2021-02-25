@@ -15,7 +15,6 @@ class LoginViewController: UIViewController {
     
     private let username = "a"
     private let password = "a"
-   // private let identifier = "TemperatureViewController"
     
     let notificationCenter = NotificationCenter.default
     let userDefaults = UserDefaults.standard
@@ -30,7 +29,6 @@ class LoginViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if userDefaults.stringArray(forKey: "username") != nil {
-       // goToTemperatureVC()
         }
     }
     
@@ -39,12 +37,10 @@ class LoginViewController: UIViewController {
             self.view.frame.origin.y -= 150
             
             let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-         //   let titleImageView = thermometerImage
             
             let titleImageView = UIImageView(image: UIImage(systemName: "thermometer"))
             titleImageView.frame = CGRect(x: 0, y: 0, width: titleView.frame.width, height: titleView.frame.height)
 
-         //   titleView.addSubview(titleImageView)
             navigationItem.titleView = titleView
         }
     }
@@ -65,7 +61,6 @@ class LoginViewController: UIViewController {
         
         userDefaults.set(username, forKey: "enter username")
         userDefaults.set(password, forKey: "enter password")
-       // goToTemperatureVC()
         usernameTextField.text = ""
         passwordTextField.text = ""
     }
@@ -90,13 +85,8 @@ class LoginViewController: UIViewController {
 
 func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "LoginViewController" {
-        // Get the new view controller using segue.destination.
-        let vc = segue.destination as! WeatherViewController
-        // Pass the selected object to the new view controller.
-      //  vc.infoText = "DayFinder helps to find \nexact weekday for given date"
-       
+        _ = segue.destination as! WeatherViewController
     }
-
 }
 
 extension LoginViewController: UITextFieldDelegate {

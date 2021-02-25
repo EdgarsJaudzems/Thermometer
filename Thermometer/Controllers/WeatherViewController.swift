@@ -47,6 +47,9 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         userEnterCityName(city: cityName)
     }
     
+    @IBAction func infoButtonTapped(_ sender: Any) {
+        warningPopUP(withTitle: "Thermometer", withMessage: "Use your location coordinates to see weather conditions")
+    }
     
     
     func removeTabBarBorder() {

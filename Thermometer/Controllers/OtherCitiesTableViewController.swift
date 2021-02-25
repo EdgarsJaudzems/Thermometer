@@ -31,7 +31,7 @@ class OtherCitiesTableViewController: UITableViewController, CLLocationManagerDe
     }
     
     @IBAction func infoButtonTapped(_ sender: Any) {
-        warningPopUP(withTitle: "Weather conditions near you", withMessage: "Thermometer shows weather conditions of closest places based on your location")
+        warningPopUP(withTitle: "Weather forecast", withMessage: "Here you will find weather forecast of closest places based on your location")
     }
     
     // CLLocation Manager

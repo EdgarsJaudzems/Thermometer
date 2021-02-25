@@ -8,19 +8,18 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-    @IBOutlet weak var goToSettingsLabel: UILabel!
-    @IBOutlet weak var darkModeTextLabel: UILabel!
     
+    @IBOutlet weak var darkModeTextLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setLabelText()
     }
     
-    
-    @IBAction func darkModeSwitch(_ sender: Any) {
+    @IBAction func iphoneSettings(_ sender: Any) {
         openSettings()
     }
-    
+ 
     func openSettings() {
         guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else {
             return

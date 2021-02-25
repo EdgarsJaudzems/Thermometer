@@ -29,7 +29,7 @@ class SavedNewsTableViewController: UITableViewController {
     }
     
     @IBAction func infoButtonTapped(_ sender: Any) {
-        warningPopUP(withTitle: "Saved for later", withMessage: "You can read saved for later articles")
+        warningPopUP(withTitle: "Saved for later", withMessage: "Here you can find your saved for later articles")
     }
     
     func loadData(){

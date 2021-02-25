@@ -347,7 +347,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Thermometer" id="DKQ-5A-3gY">
-                        <barButtonItem key="leftBarButtonItem" image="checkmark.seal" catalog="system" id="U9J-BU-pcy">
+                        <barButtonItem key="leftBarButtonItem" image="gearshape" catalog="system" id="U9J-BU-pcy">
                             <color key="tintColor" systemColor="systemRedColor"/>
                             <connections>
                                 <segue destination="clF-Qs-YhG" kind="show" id="gx0-0X-pTG"/>
@@ -384,52 +384,185 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Go to iPhone Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ilc-qc-d4z">
-                                <rect key="frame" x="60" y="201" width="166" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="S84-Cf-paR">
-                                <rect key="frame" x="265" y="201" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="onTintColor" systemColor="systemRedColor"/>
-                                <connections>
-                                    <action selector="darkModeSwitch:" destination="clF-Qs-YhG" eventType="valueChanged" id="IwO-Ap-Nrs"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dark mode is OFF" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GB6-I6-sfa">
-                                <rect key="frame" x="91" y="156" width="193" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="N6e-go-aBq">
+                                <rect key="frame" x="66" y="104.5" width="243" height="458"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ljk-OO-H4s">
+                                        <rect key="frame" x="21.5" y="0.0" width="200" height="169"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thermo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7V-Zj-to7">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="56"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="ON9-su-Y2u"/>
+                                                    <constraint firstAttribute="height" constant="56" id="pY3-qP-7FU"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="50"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="meter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuV-6T-Npz">
+                                                <rect key="frame" x="36.5" y="61" width="127" height="43"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="43" id="dKd-dx-ODT"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="127" id="rrr-HS-TQj"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="40"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poweroff" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="V0o-Uk-4uI">
+                                                <rect key="frame" x="70" y="109.5" width="60" height="59"/>
+                                                <color key="tintColor" systemColor="systemRedColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="HmO-xK-GGc"/>
+                                                    <constraint firstAttribute="width" constant="60" id="xhI-On-ClK"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0.1(1C01)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogq-B9-vw7">
+                                        <rect key="frame" x="46" y="180" width="151" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="Qm8-Kb-Uc0"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="151" id="lg3-O0-KC5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ZMw-9E-1B1">
+                                        <rect key="frame" x="0.0" y="212" width="243" height="156"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanks to:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ulg-lF-7NI">
+                                                <rect key="frame" x="80.5" y="0.0" width="82" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="Qyq-Mx-cte"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="82" id="yuR-0y-iDY"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arkadijs Makarenko" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uD6-EF-Vm5">
+                                                <rect key="frame" x="47" y="27" width="149" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="aaR-tH-ns1"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="149" id="jSD-FS-Y4O"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accenture" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvB-7m-Mmt">
+                                                <rect key="frame" x="72" y="54" width="99" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="I2h-WO-LWF"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="99" id="dS0-di-RlN"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Google" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FM5-Vz-kib">
+                                                <rect key="frame" x="94" y="81" width="55" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55" id="oXq-hL-axe"/>
+                                                    <constraint firstAttribute="height" constant="21" id="v9G-9A-7B2"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stack Overflow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8H-f1-u26">
+                                                <rect key="frame" x="63.5" y="108" width="116" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="GUJ-4v-IY4"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="116" id="pbP-G3-70j"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--------------------------------" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRx-Q9-8tF">
+                                                <rect key="frame" x="0.0" y="135" width="243" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="243" id="iPW-hx-GTz"/>
+                                                    <constraint firstAttribute="height" constant="21" id="piv-f2-SbZ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KSw-Fp-q6y">
+                                        <rect key="frame" x="1.5" y="379" width="240" height="79"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jV-ve-RkI" customClass="DesignButton" customModule="Thermometer" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="3tJ-Fs-PBs"/>
+                                                    <constraint firstAttribute="height" constant="34" id="Zbn-ps-9WC"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="20"/>
+                                                <state key="normal" title="iPhone Settings">
+                                                    <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="11"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="iphoneSettings:" destination="clF-Qs-YhG" eventType="touchUpInside" id="EqH-fT-Ee4"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark mode is OFF" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GB6-I6-sfa">
+                                                <rect key="frame" x="23.5" y="42" width="193" height="37"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="193" id="sjR-2s-52J"/>
+                                                    <constraint firstAttribute="height" constant="37" id="x98-Xp-yEs"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bGu-SP-lTp"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="N6e-go-aBq" firstAttribute="centerX" secondItem="s4q-An-G37" secondAttribute="centerX" id="Gmn-dA-Dvb"/>
+                            <constraint firstItem="N6e-go-aBq" firstAttribute="centerY" secondItem="s4q-An-G37" secondAttribute="centerY" id="N95-iJ-s2S"/>
+                            <constraint firstItem="N6e-go-aBq" firstAttribute="leading" secondItem="bGu-SP-lTp" secondAttribute="leading" constant="66" id="s2g-Mu-Ib7"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="MMX-Aq-ueM"/>
                     <connections>
                         <outlet property="darkModeTextLabel" destination="GB6-I6-sfa" id="aK7-W9-ReF"/>
-                        <outlet property="goToSettingsLabel" destination="Ilc-qc-d4z" id="lKS-xL-vOW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ejA-le-a5n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5936.8000000000002" y="-22.03898050974513"/>
         </scene>
-        <!--Home-->
+        <!--Thermometer-->
         <scene sceneID="DXl-ZV-SB7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DL7-Ox-nix" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="lUK-iu-RUi"/>
+                    <tabBarItem key="tabBarItem" title="Thermometer" image="thermometer" catalog="system" id="lUK-iu-RUi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rry-Z7-VFj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" systemColor="labelColor"/>
+                        <color key="tintColor" systemColor="systemRedColor"/>
                         <color key="barTintColor" systemColor="systemGray6Color"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -537,7 +670,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Forecast near my location" id="gft-AD-daY">
-                        <barButtonItem key="leftBarButtonItem" image="checkmark.seal" catalog="system" id="fIa-p2-6rQ">
+                        <barButtonItem key="leftBarButtonItem" image="gearshape" catalog="system" id="fIa-p2-6rQ">
                             <color key="tintColor" systemColor="systemRedColor"/>
                             <connections>
                                 <segue destination="clF-Qs-YhG" kind="show" id="dno-hb-zfV"/>
@@ -564,7 +697,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ms6-4S-hMc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" systemColor="labelColor"/>
+                        <color key="tintColor" systemColor="systemRedColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -631,7 +764,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Weather News" id="lHb-NV-7TN">
-                        <barButtonItem key="leftBarButtonItem" image="checkmark.seal" catalog="system" id="Y6L-53-C1K">
+                        <barButtonItem key="leftBarButtonItem" image="gearshape" catalog="system" id="Y6L-53-C1K">
                             <color key="tintColor" systemColor="systemRedColor"/>
                             <connections>
                                 <segue destination="clF-Qs-YhG" kind="show" id="6Wb-DC-Lli"/>
@@ -792,16 +925,16 @@
             </objects>
             <point key="canvasLocation" x="6410.3999999999996" y="1374.9625187406298"/>
         </scene>
-        <!--News-->
+        <!--Weather News-->
         <scene sceneID="LBi-Ir-jzf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DqI-PL-Kun" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="News" image="text.justify" catalog="system" id="zuv-UH-hUU"/>
+                    <tabBarItem key="tabBarItem" title="Weather News" image="text.justify" catalog="system" id="zuv-UH-hUU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="M65-jb-qfI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" systemColor="labelColor"/>
+                        <color key="tintColor" systemColor="systemRedColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -812,7 +945,7 @@
             </objects>
             <point key="canvasLocation" x="4196" y="1374.9625187406298"/>
         </scene>
-        <!--Saved News Table View Controller-->
+        <!--Saved For Later-->
         <scene sceneID="ec7-yJ-8xS">
             <objects>
                 <tableViewController id="pCG-JG-mtZ" customClass="SavedNewsTableViewController" customModule="Thermometer" customModuleProvider="target" sceneMemberID="viewController">
@@ -867,8 +1000,8 @@
                             <outlet property="delegate" destination="pCG-JG-mtZ" id="D9V-Hy-ZPL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="gOw-fk-V0n">
-                        <barButtonItem key="leftBarButtonItem" image="checkmark.seal" catalog="system" id="eb4-MQ-T8v">
+                    <navigationItem key="navigationItem" title="Saved For Later" id="gOw-fk-V0n">
+                        <barButtonItem key="leftBarButtonItem" image="gearshape" catalog="system" id="eb4-MQ-T8v">
                             <color key="tintColor" systemColor="systemRedColor"/>
                             <connections>
                                 <segue destination="clF-Qs-YhG" kind="show" id="e7f-OM-8N5"/>
@@ -895,7 +1028,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iJn-2a-NJf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" systemColor="labelColor"/>
+                        <color key="tintColor" systemColor="systemRedColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -914,6 +1047,9 @@
         <designable name="2fS-da-2lo">
             <size key="intrinsicContentSize" width="163" height="34"/>
         </designable>
+        <designable name="7jV-ve-RkI">
+            <size key="intrinsicContentSize" width="192" height="41"/>
+        </designable>
         <designable name="EfM-pR-5zC">
             <size key="intrinsicContentSize" width="165" height="34"/>
         </designable>
@@ -931,15 +1067,15 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="dno-hb-zfV"/>
+        <segue reference="gx0-0X-pTG"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="checkmark.seal" catalog="system" width="128" height="128"/>
         <image name="folder" catalog="system" width="128" height="97"/>
-        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="location.circle" catalog="system" width="128" height="121"/>
         <image name="person" catalog="system" width="128" height="117"/>
+        <image name="poweroff" catalog="system" width="128" height="121"/>
         <image name="sun.min" catalog="system" width="128" height="121"/>
         <image name="text.justify" catalog="system" width="128" height="100"/>
         <image name="thermometer" catalog="system" width="93" height="128"/>

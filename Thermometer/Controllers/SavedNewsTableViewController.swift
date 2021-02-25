@@ -20,23 +20,27 @@ class SavedNewsTableViewController: UITableViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         context = appDelegate.persistentContainer.viewContext
     
+       // self.navigationItem.rightBarButtonItem = self.editButtonItem
         loadData()
     }
     
-    @IBAction func infoButtonTapped(_ sender: Any) {
-        warningPopUP(withTitle: "Saved for later", withMessage: "You can read saved for later articles")
-    }
     override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(true)
            loadData()
        }
+    
+    @IBAction func infoButtonTapped(_ sender: Any) {
+        warningPopUP(withTitle: "Saved for later", withMessage: "You can read saved for later articles")
+    }
+ 
        
-       func loadData(){
+    func loadData(){
            let request: NSFetchRequest<Items> = Items.fetchRequest()
            
            do{
                savedItems = try (context?.fetch(request))!
            }catch{
+                warningPopUP(withTitle: "Nothing to load", withMessage: "Reading list is empty")
                print(error.localizedDescription)
            }
            tableView.reloadData()
@@ -64,10 +68,11 @@ class SavedNewsTableViewController: UITableViewController {
 
         let item = savedItems[indexPath.row]
         
-//        cell.newsLabelCell.text = item.newsTitle
-        //print(item.newsTitle)
-      //  cell.newsLabelCell.text = item.newsTitle
-      //  cell.newsImageCell.loadImageFromUrl(urlString: item.image ?? "No image" )
+        cell.newsLabelCell.text = item.newsTitle
+        cell.newsImageCell.loadImageFromUrl(urlString: item.image ?? "No image")
+        
+        //cell.newsImageCell.load(urlString: self.images[indexPath.row])
+
 
         return cell
     }
@@ -78,29 +83,29 @@ class SavedNewsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            
+
             let alert = UIAlertController(title: "Delete", message: "Are you sure you want to delete?", preferredStyle: .alert)
-            
+
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: {_ in
-            
+
                 let item = self.savedItems[indexPath.row]
-                
+
                 self.context?.delete(item)
                 self.saveData()
-                
+
             }))
             self.present(alert, animated: true)
         }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         guard let vc = storyboard.instantiateViewController(identifier: "WebKitController") as? WebViewController else {
             return
         }
-       
+
         vc.urlString = savedItems[indexPath.row].url!
 
         navigationController?.pushViewController(vc, animated: true)

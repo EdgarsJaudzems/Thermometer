@@ -838,7 +838,7 @@
                                                         <constraint firstAttribute="height" constant="98" id="Isz-Pr-mkE"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBD-SL-9cc">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBD-SL-9cc">
                                                     <rect key="frame" x="162" y="0.0" width="181" height="98"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="181" id="0Kq-0w-bC0"/>
@@ -856,6 +856,10 @@
                                         <constraint firstItem="5PI-LR-4HO" firstAttribute="centerX" secondItem="Ga7-Fp-Oul" secondAttribute="centerX" id="eT6-0o-yGe"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="newsImageCell" destination="dyZ-AY-dkO" id="wxC-aI-NV2"/>
+                                    <outlet property="newsLabelCell" destination="yBD-SL-9cc" id="Oi5-4x-N9u"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -924,7 +928,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="gx0-0X-pTG"/>
+        <segue reference="6Wb-DC-Lli"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="checkmark.seal" catalog="system" width="128" height="128"/>

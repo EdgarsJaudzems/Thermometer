@@ -8,18 +8,16 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-    
-    @IBOutlet weak var darkModeTextLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setLabelText()
-    }
-    
-    @IBAction func iphoneSettings(_ sender: Any) {
-        openSettings()
+ 
     }
  
+    @IBAction func settings(_ sender: Any) {
+        openSettings()
+    }
+    
     func openSettings() {
         guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else {
             return
@@ -31,21 +29,5 @@ class SettingsViewController: UIViewController {
             }
         }
     }
-    
-    func setLabelText() {
-        var text = "Unable to specify UI style"
-        if self.traitCollection.userInterfaceStyle == .dark {
-            text = "Dark mode is ON"
-        } else {
-            text = "Dark mode is OFF"
-        }
-        
-        darkModeTextLabel.text = text
-    }
 }
 
-extension SettingsViewController {
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        setLabelText()
-    }
-}

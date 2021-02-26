@@ -376,7 +376,7 @@
             </objects>
             <point key="canvasLocation" x="4921" y="-22"/>
         </scene>
-        <!--Settings-->
+        <!--About App-->
         <scene sceneID="kUT-FY-4cF">
             <objects>
                 <viewController id="clF-Qs-YhG" customClass="SettingsViewController" customModule="Thermometer" customModuleProvider="target" sceneMemberID="viewController">
@@ -385,7 +385,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="N6e-go-aBq">
-                                <rect key="frame" x="66" y="104.5" width="243" height="458"/>
+                                <rect key="frame" x="66" y="163" width="243" height="341"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ljk-OO-H4s">
                                         <rect key="frame" x="21.5" y="0.0" width="200" height="169"/>
@@ -431,10 +431,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ZMw-9E-1B1">
-                                        <rect key="frame" x="0.0" y="212" width="243" height="156"/>
+                                        <rect key="frame" x="47" y="212" width="149" height="129"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanks to:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ulg-lF-7NI">
-                                                <rect key="frame" x="80.5" y="0.0" width="82" height="21"/>
+                                                <rect key="frame" x="33.5" y="0.0" width="82" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="Qyq-Mx-cte"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="82" id="yuR-0y-iDY"/>
@@ -444,7 +444,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arkadijs Makarenko" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uD6-EF-Vm5">
-                                                <rect key="frame" x="47" y="27" width="149" height="21"/>
+                                                <rect key="frame" x="0.0" y="27" width="149" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="aaR-tH-ns1"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="149" id="jSD-FS-Y4O"/>
@@ -454,7 +454,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accenture" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvB-7m-Mmt">
-                                                <rect key="frame" x="72" y="54" width="99" height="21"/>
+                                                <rect key="frame" x="25" y="54" width="99" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="I2h-WO-LWF"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="99" id="dS0-di-RlN"/>
@@ -464,7 +464,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Google" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FM5-Vz-kib">
-                                                <rect key="frame" x="94" y="81" width="55" height="21"/>
+                                                <rect key="frame" x="47" y="81" width="55" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55" id="oXq-hL-axe"/>
                                                     <constraint firstAttribute="height" constant="21" id="v9G-9A-7B2"/>
@@ -474,60 +474,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stack Overflow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8H-f1-u26">
-                                                <rect key="frame" x="63.5" y="108" width="116" height="21"/>
+                                                <rect key="frame" x="16.5" y="108" width="116" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="GUJ-4v-IY4"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="116" id="pbP-G3-70j"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--------------------------------" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRx-Q9-8tF">
-                                                <rect key="frame" x="0.0" y="135" width="243" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="243" id="iPW-hx-GTz"/>
-                                                    <constraint firstAttribute="height" constant="21" id="piv-f2-SbZ"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KSw-Fp-q6y">
-                                        <rect key="frame" x="1.5" y="379" width="240" height="79"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jV-ve-RkI" customClass="DesignButton" customModule="Thermometer" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
-                                                <color key="backgroundColor" systemColor="systemRedColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="3tJ-Fs-PBs"/>
-                                                    <constraint firstAttribute="height" constant="34" id="Zbn-ps-9WC"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="20"/>
-                                                <state key="normal" title="Settings">
-                                                    <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="2"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="11"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="iphoneSettings:" destination="clF-Qs-YhG" eventType="touchUpInside" id="EqH-fT-Ee4"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark mode is OFF" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GB6-I6-sfa">
-                                                <rect key="frame" x="23.5" y="42" width="193" height="37"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="193" id="sjR-2s-52J"/>
-                                                    <constraint firstAttribute="height" constant="37" id="x98-Xp-yEs"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -544,10 +496,14 @@
                             <constraint firstItem="N6e-go-aBq" firstAttribute="leading" secondItem="bGu-SP-lTp" secondAttribute="leading" constant="66" id="s2g-Mu-Ib7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="MMX-Aq-ueM"/>
-                    <connections>
-                        <outlet property="darkModeTextLabel" destination="GB6-I6-sfa" id="aK7-W9-ReF"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="About App" id="MMX-Aq-ueM">
+                        <barButtonItem key="rightBarButtonItem" image="gearshape.fill" catalog="system" id="zSu-at-eNR">
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <action selector="settings:" destination="clF-Qs-YhG" id="hwh-Nb-Ecn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ejA-le-a5n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1047,13 +1003,10 @@
             <size key="intrinsicContentSize" width="146" height="38"/>
         </designable>
         <designable name="2fS-da-2lo">
-            <size key="intrinsicContentSize" width="194" height="34"/>
-        </designable>
-        <designable name="7jV-ve-RkI">
-            <size key="intrinsicContentSize" width="97" height="41"/>
+            <size key="intrinsicContentSize" width="163" height="34"/>
         </designable>
         <designable name="EfM-pR-5zC">
-            <size key="intrinsicContentSize" width="193" height="34"/>
+            <size key="intrinsicContentSize" width="165" height="34"/>
         </designable>
         <designable name="LY1-Yd-2OI">
             <size key="intrinsicContentSize" width="73" height="41"/>
@@ -1074,6 +1027,7 @@
     <resources>
         <image name="folder" catalog="system" width="128" height="97"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="location.circle" catalog="system" width="128" height="121"/>
         <image name="person" catalog="system" width="128" height="117"/>
